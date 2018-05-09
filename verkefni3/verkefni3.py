@@ -136,8 +136,8 @@ def moveenemybullets(bullets):
 
 def gameend(invaders):
     if invaders == [[],[],[],[],[]]:
-        screen.fill(bg)
-        drawText('You win.', font, screen , 300, 300, BLUE)
+        screen.fill(BLACK)
+        drawText('You win.', font, screen , 300, 300, RED)
 
 def drawplayerinvaderbullet(player, invaders, bullets):
     pygame.draw.rect(screen, RED, player)
@@ -150,7 +150,7 @@ def drawplayerinvaderbullet(player, invaders, bullets):
             elif invader in invaders[2]:
                 pygame.draw.rect(screen, YELLOW, invader)
             elif invader in invaders[3]:
-                pygame.draw.rect(screen, BLACK, invader)
+                pygame.draw.rect(screen, WHITE, invader)
             elif invader in invaders[4]:
                 pygame.draw.rect(screen, GREEN, invader)
     for w in walls:
@@ -201,7 +201,7 @@ while True:
                 moveRight = False
     time += timer
 
-    screen.fill(bg)
+    screen.fill(BLACK)
     drawplayerinvaderbullet(player, invaders, bullets)
     invader_dir = moveinvaders(invaders, invader_dir)
     movebullets(bullets)
